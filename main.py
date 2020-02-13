@@ -13,7 +13,7 @@ def main():
     if 'loc' in sys.argv:
         time = datetime.utcnow()
         coordinates = get_loc()
-        print(f'The ISS current location at {time} is {coordinates}')
+        print(f'The ISS current location at {time} is {coordinates}\n')
     if 'pass' in sys.argv:
         #TODO
     if 'people' in sys.argv:

@@ -12,8 +12,8 @@ def get_pass(latitude, longitude, altitude=False, number=False):
     supplied, get_pass will return the info for the next upcoming pass.
 
     Params:
-    latitude:
-    longitude:
+    latitude: desired latitude ...
+    longitude: desired longitude ...
     altitude: optional parameter, defaults to false to not be included unless specified
     number: optional parameter, defaults to false to not be included unless specified
 

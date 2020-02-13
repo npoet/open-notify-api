@@ -11,8 +11,16 @@ def get_ppl():
     Get the current number of astronauts in space (by craft), and their names if available
 
     Returns:
-    dict: Names of astronauts by craft in the format {"craft1": p1, p2 ..., "craft2": p1,  ...}
+    dict: Names of astronauts by craft in the format {"craft1": [person1, ...], "craft2": [p1, ]}
     """
     resp = requests.get(API_ADDR)
     people = resp.json()
-    return people
+
+    astros_by_craft = {}
+    for entry in people['people']:
+        if entry['craft'] not in astros_by_craft:
+            astros_by_craft[entry['craft']] = []
+        if entry['craft'] in astros_by_craft:
+            astros_by_craft[entry['craft']].append(entry['name'])
+
+    return astros_by_craft
